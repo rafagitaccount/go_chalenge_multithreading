@@ -1,16 +1,17 @@
-# Desafio Multithread - GoExpert (Full Cycle)
- 
-## Neste desafio você terá que usar o que aprendemos com Multithreading e APIs para buscar o resultado mais rápido entre duas APIs distintas. As duas requisições serão feitas simultaneamente para as seguintes APIs:
-## <br>
+# Multithread Chalenge - GoExpert (Full Cycle)
+
+### In this one you have to use what you've learned about multi-threading and APIs
+### to get the faster response between two APIs.
+### <br>
 ### -  https://cdn.apicep.com/file/apicep/" + cep + ".json
 
 ### -  http://viacep.com.br/ws/" + cep + "/json/
 ### <br>
-### Os requisitos para este desafio são:
+### The requirements are:
 ### <br>
 
-### - Acatar a API que entregar a resposta mais rápida e descartar a resposta mais lenta.
+### - Considerate the API that deliver the faster response and discard the other one.
 
-### - O resultado da request deverá ser exibido no command line, bem como qual API a enviou.
+### - The request result should be showed in the command line, as well as which one has sent it.
 
-### - Limitar o tempo de resposta em 1 segundo. Caso contrário, o erro de timeout deve ser exibido.
+### - Limit the time response in one second. Otherwise, a timeout error should be showed.
