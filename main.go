@@ -14,19 +14,19 @@ func main() {
 	url2 := "http://viacep.com.br/ws/"
 	end_url2 := "/json/"
 
-	cep := "13300-000"
+	cep := "13423-100"
 
 	c1 := make(chan string)
 	c2 := make(chan string)
 
 	go func() {
 		resp := CallCepApi(url1, cep, end_url1)
-		c1 <- "ApiCEP.com respondeu mais rápido com: " + resp + "\n"
+		c1 <- "ApiCEP.com respondeu mais rápido com o resultado:" + resp + "\n"
 	}()
 
 	go func() {
 		resp := CallCepApi(url2, cep, end_url2)
-		c2 <- "ViaCEP respondeu mais rápido com: " + resp + "\n"
+		c2 <- "ViaCEP respondeu mais rápido com o resultado: " + resp + "\n"
 	}()
 
 	select {
@@ -47,9 +47,9 @@ func CallCepApi(url string, cep string, end_url string) string {
 		panic(err)
 	}
 	defer req.Body.Close()
-	_, err = io.ReadAll(req.Body)
+	res, err := io.ReadAll(req.Body)
 	if err != nil {
 		panic(err)
 	}
-	return "ok"
+	return string(res)
 }
